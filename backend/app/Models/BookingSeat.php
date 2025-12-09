@@ -21,4 +21,6 @@ class BookingSeat extends Model
     {
         return $this->belongsTo(Seat::class);
     }
+        public $timestamps = false; // disables automatic timestamps
+
 }

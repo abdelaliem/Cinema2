@@ -44,11 +44,11 @@ const ShowtimeSelector = () => {
       <div className="showtimes-grid">
         {showtimes.map((showtime) => (
           <div key={showtime.id} className="showtime-card">
-            <p className="date">{formatDate(showtime.date)}</p>
+            <p className="date">{formatDate(showtime.start_time)}</p>
             <p className="time">{formatTime(showtime.start_time)}</p>
-            <p className="hall">Hall {showtime.hall?.name}</p>
+            <p className="hall">Hall {showtime.hall}</p>
             <p className="available-seats">
-              {showtime.available_seats || "0"} seats available
+              {showtime.available_seats.length || "0"} seats available
             </p>
             <button
               className="btn-select"

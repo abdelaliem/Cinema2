@@ -36,6 +36,10 @@ const CheckoutForm = () => {
         user_email: formData.user_email,
         user_phone: formData.user_phone,
         showtime_id: selectedShowtime.id,
+        total_price: calculateTotalPrice(
+          selectedSeats,
+          selectedMovie?.price || 10
+        ),
         seat_ids: selectedSeats,
       };
 

@@ -20,9 +20,7 @@ function App() {
               <Route path="/" element={<Home />} />
             </Routes>
           </main>
-          <footer className="app-footer">
-            <p>&copy; 2024 Cinema Booking. All rights reserved.</p>
-          </footer>
+          
         </div>
       </BookingProvider>
     </Router>

@@ -43,5 +43,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Booking::class);
     }
+        public $timestamps = false; // disables automatic timestamps
+
     
 }

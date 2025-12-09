@@ -31,13 +31,12 @@ const SeatSelector = () => {
       const seatsData = response.data.data || response.data;
       setSeats(seatsData);
 
-      // Group seats by row
       const grouped = {};
       seatsData.forEach((seat) => {
-        if (!grouped[seat.row]) {
-          grouped[seat.row] = [];
+        if (!grouped[seat.row_label]) {
+          grouped[seat.row_label] = [];
         }
-        grouped[seat.row].push(seat);
+        grouped[seat.row_label].push(seat);
       });
       setSeatsByRow(grouped);
       setError(null);
@@ -81,11 +80,11 @@ const SeatSelector = () => {
                 {seatsByRow[row].map((seat) => (
                   <button
                     key={seat.id}
-                    className={`seat ${seat.is_booked ? "booked" : ""} ${
+                    className={`seat ${seat.is_available === false ? "booked" : ""} ${
                       selectedSeats.includes(seat.id) ? "selected" : ""
                     }`}
-                    onClick={() => handleSeatClick(seat.id, seat.is_booked)}
-                    disabled={seat.is_booked}
+                    onClick={() => handleSeatClick(seat.id, seat.is_available === false)}
+                    disabled={seat.is_available === false}
                     title={`${row}${seat.number}`}
                   >
                     {seat.number}

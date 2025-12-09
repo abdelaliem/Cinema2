@@ -16,3 +16,4 @@ Route::apiResource('showtimes', ShowtimeController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('bookings', BookingController::class);
 Route::get('movies/{id}/showtimes', [MovieController::class, 'getShows']);
+Route::get('showtimes/{Id}/seats', [ShowtimeController::class, 'getSeats']);
